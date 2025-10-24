@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <div className='bg-white py-16'>
+    <div className='bg-white py-16 pt-16'>
       <div className='container mx-auto px-6 lg:px-8'>
         <div className='grid md:grid-cols-2 gap-12 items-center'>
           {/* Image Column */}
