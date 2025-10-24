@@ -5,9 +5,8 @@ const ContactPage = () => {
         Contact Iraklis
       </h1>
       <p className='text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto'>
-        Pentru orice întrebări, colaborări sau solicitări, vă rugăm să ne
-        contactați direct. Suntem aici pentru a vă oferi cele mai bune soluții
-        artistice.
+        For any questions, collaborations or requests, please contact us
+        directly. We are here to provide you with the best artistic solutions.
       </p>
 
       <div className='grid md:grid-cols-2 gap-12 items-start bg-white p-8 rounded-lg shadow-xl'>
@@ -82,11 +81,6 @@ const ContactPage = () => {
             </a>
             {/* Add more social media links as needed */}
           </div>
-        </div>
-
-        {/* Visual Placeholder Column */}
-        <div className='w-full h-64 md:h-auto bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-lg'>
-          Locație / Hartă Placeholder
         </div>
       </div>
     </div>
