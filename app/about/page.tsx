@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <div className='bg-white py-16 pt-16'>
+    <div className='bg-white py-24'>
       <div className='container mx-auto px-6 lg:px-8'>
         <div className='grid md:grid-cols-2 gap-12 items-center'>
           {/* Image Column */}
-          <div className='relative w-full rounded-lg overflow-hidden pb-[100%]'>
+          <div className='relative w-full rounded-lg overflow-hidden pb-[100%] gap-12'>
             <Image
               src='/artist.jpg'
               alt='Iraklis, the sculptor'
