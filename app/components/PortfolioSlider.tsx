@@ -1,5 +1,5 @@
-'use client';
-import Link from 'next/link';
+"use client";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -20,11 +20,11 @@ const portfolioImages = [
 
 export default function PortfolioSlider() {
   return (
-    <Link href="/gallery" passHref>
+    <Link href='/gallery' passHref>
       <section className='py-16 bg-gray-100 cursor-pointer'>
         <div className='container mx-auto px-4'>
           <h2 className='text-4xl font-bold text-gray-800 text-center mb-12'>
-            My Portfolio
+            Portfolio
           </h2>
           <Swiper
             slidesPerView={1}
