@@ -47,9 +47,7 @@ const Navbar = () => {
               <Link href="/gallery" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                 Gallery
               </Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-                About
-              </Link>
+
               <Link href="/contact" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </Link>
@@ -97,9 +95,7 @@ const Navbar = () => {
           <Link href="/gallery" onClick={closeMenu} className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
             Gallery
           </Link>
-          <Link href="/about" onClick={closeMenu} className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
-            About
-          </Link>
+
           <Link href="/contact" onClick={closeMenu} className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
             Contact
           </Link>
