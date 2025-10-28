@@ -1,5 +1,6 @@
 import HeroSlider from './components/HeroSlider';
 import PortfolioSlider from './components/PortfolioSlider';
+import ServicesSection from './components/ServicesSection';
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
       </section>
 
       <PortfolioSlider />
+
+      <ServicesSection />
     </>
   );
 }

@@ -21,9 +21,9 @@ const portfolioImages = [
 export default function PortfolioSlider() {
   return (
     <Link href="/gallery" passHref>
-      <section className='py-16 bg-gray-800 cursor-pointer'>
+      <section className='py-16 bg-gray-100 cursor-pointer'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-4xl font-bold text-white text-center mb-12'>
+          <h2 className='text-4xl font-bold text-gray-800 text-center mb-12'>
             My Portfolio
           </h2>
           <Swiper
