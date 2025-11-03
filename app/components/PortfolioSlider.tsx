@@ -57,8 +57,10 @@ export default function PortfolioSlider() {
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    layout='fill'
-                    objectFit='cover'
+                    fill // Aceasta o face să umple div-ul părinte (care trebuie să aibă position: relative/absolute)
+                    style={{
+                      objectFit: "cover", // Folosiți CSS-ul standard prin prop-ul style
+                    }}
                     className='transition-transform duration-300 hover:scale-105'
                   />
                 </div>
