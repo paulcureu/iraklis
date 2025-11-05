@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Iraklis - Sculptor",
   description: "Portfolio of marble sculptor Iraklis.",
@@ -14,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='flex flex-col min-h-screen bg-gray-50 antialiased'>
+      <body
+        className={`${playfair.className} flex flex-col min-h-screen bg-gray-50 antialiased`}
+      >
         <header>
           <Navbar />
         </header>

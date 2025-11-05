@@ -48,20 +48,23 @@ export default function HeroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='absolute inset-0 flex flex-col items-center justify-center text-center z-10'>
-        <div className='relative max-w-2xl'>
-          <h1 className='text-5xl md:text-7xl font-bold tracking-tight text-white'>
-            Iraklis
-          </h1>
-          <p className='mt-4 text-lg md:text-2xl text-gray-200'>
-            Timeless Beauty, Carved in Stone
-          </p>
-          <Link
-            href='/gallery'
-            className='mt-8 inline-block bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300'
-          >
-            View Gallery
-          </Link>
+      <div className='absolute inset-0 bg-black opacity-50'></div>
+      <div className='absolute inset-0 flex flex-col justify-center text-center z-10'>
+        <div>
+          <div className='w-full bg-[rgba(0,0,0,0.4)] py-8'>
+            <h1 className='text-5xl md:text-7xl text-white font-serif'>
+              Iraklis
+            </h1>
+            <p className='mt-4 text-lg md:text-2xl text-gray-300'>
+              Timeless Beauty, Carved in Stone
+            </p>
+            <Link
+              href='/gallery'
+              className='mt-8 inline-block bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300'
+            >
+              View Gallery
+            </Link>
+          </div>
         </div>
       </div>
     </div>
