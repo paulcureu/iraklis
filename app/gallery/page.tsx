@@ -1,4 +1,10 @@
 import SculptureSlider from "../components/SculptureSlider";
+import { Playfair_Display } from "next/font/google";
+
+const bokorFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: "600",
+});
 
 const GalleryPage = () => {
   // Data updated with the correct paths to your images
@@ -119,7 +125,9 @@ const GalleryPage = () => {
         {sculptures.map((sculpture) => (
           <div key={sculpture.id}>
             <SculptureSlider images={sculpture.images} />
-            <h3 className='text-lg font-semibold text-gray-800 mt-4 text-center'>
+            <h3
+              className={`text-lg text-gray-800 mt-4 text-center ${bokorFont.className}`}
+            >
               {sculpture.title}
             </h3>
           </div>
