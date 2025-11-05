@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='icon' href='/icon/logo-Iraklis.svg' type='image/svg+xml' />
+      </head>
       <body
         className={`${playfair.className} flex flex-col min-h-screen bg-gray-50 antialiased`}
       >
