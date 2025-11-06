@@ -30,7 +30,7 @@ export default function HeroSlider() {
         effect={"fade"}
         fadeEffect={{ crossFade: true }}
         autoplay={{
-          delay: 3000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}
