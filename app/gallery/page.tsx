@@ -126,7 +126,7 @@ const GalleryPage = () => {
     },
     {
       id: 11,
-      title: "Greece ~ Mount Athos 2023-2025",
+      title: "Greece ~ Mount Athos ~ 2023-2025",
       images: [
         "/art/GreecAthos2023/1.jpg",
         "/art/GreecAthos2023/2.jpg",
@@ -134,6 +134,36 @@ const GalleryPage = () => {
         "/art/GreecAthos2023/4.jpg",
         "/art/GreecAthos2023/5.jpg",
         "/art/GreecAthos2023/6.jpg",
+      ],
+    },
+    {
+      id: 12,
+      title: "Greece ~ Mount Athos ~ Archangels",
+      images: ["/art/ArchangelsAthos/1.jpg"],
+    },
+    {
+      id: 13,
+      title: "Greece ~ Mount Athos",
+      images: ["/art/ArchangelsAthos/5.jpg"],
+    },
+    {
+      id: 14,
+      title: "Greece ~ Mount Athos ~ St.George",
+      images: [
+        "/art/ArchangelsAthos/6.jpg",
+        "/art/ArchangelsAthos/3.jpg",
+        "/art/ArchangelsAthos/4.jpg",
+      ],
+    },
+    {
+      id: 15,
+      title: "Greece ~ Mount Athos ~ Monastery",
+      images: [
+        "/art/AthosMonastery/1.jpg",
+        "/art/AthosMonastery/2.jpg",
+        "/art/AthosMonastery/3.jpg",
+        "/art/AthosMonastery/4.jpg",
+        "/art/AthosMonastery/5.jpg",
       ],
     },
   ];
