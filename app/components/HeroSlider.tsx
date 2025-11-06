@@ -13,11 +13,12 @@ const slides = [
   {
     image: "/backgrounds/hero-background1.jpg",
   },
+
   {
-    image: "/backgrounds/hero-background.jpg",
+    image: "/backgrounds/hero-background3.jpg",
   },
   {
-    image: "/backgrounds/hero-background2.jpg",
+    image: "/backgrounds/hero-background4.jpg",
   },
 ];
 
@@ -29,7 +30,7 @@ export default function HeroSlider() {
         effect={"fade"}
         fadeEffect={{ crossFade: true }}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Autoplay]}

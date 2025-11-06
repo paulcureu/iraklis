@@ -114,6 +114,28 @@ const GalleryPage = () => {
       title: "Georgia ~ exterior stone design ~ 2012-2013",
       images: ["/art/Georgia/1.jpg", "/art/Georgia/2.jpg"],
     },
+    {
+      id: 10,
+      title: "Marble Kapitels of St.Evangelists ~ Mount Athos ",
+      images: [
+        "/art/StEvangelists/1.jpg",
+        "/art/StEvangelists/2.jpg",
+        "/art/StEvangelists/3.jpg",
+        "/art/StEvangelists/4.jpg",
+      ],
+    },
+    {
+      id: 11,
+      title: "Greece ~ Mount Athos 2023-2025",
+      images: [
+        "/art/GreecAthos2023/1.jpg",
+        "/art/GreecAthos2023/2.jpg",
+        "/art/GreecAthos2023/3.jpg",
+        "/art/GreecAthos2023/4.jpg",
+        "/art/GreecAthos2023/5.jpg",
+        "/art/GreecAthos2023/6.jpg",
+      ],
+    },
   ];
 
   return (
