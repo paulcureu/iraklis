@@ -27,9 +27,9 @@ export default function Footer() {
                     <div>
                         <h4 className="text-lg font-semibold mb-6 uppercase tracking-wider text-gray-300">Contact</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li>Athens, Greece</li>
-                            <li>info@iraklis-sculptor.com</li>
-                            <li>+30 210 123 4567</li>
+                            <li>Athos, Greece</li>
+                            <li>narikaleli1@gmail.com</li>
+                            <li>+30 697 542 1099</li>
                         </ul>
                     </div>
                 </div>
