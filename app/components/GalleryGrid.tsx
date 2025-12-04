@@ -67,7 +67,6 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
                     src: item.src,
                     alt: item.title,
                     title: item.title,
-                    description: item.category
                 }))}
                 open={index >= 0}
                 close={() => setIndex(-1)}
