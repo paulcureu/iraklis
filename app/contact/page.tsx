@@ -1,97 +1,124 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Mail, Phone, Instagram, MapPin } from "lucide-react";
+
 const ContactPage = () => {
+  const contactInfo = [
+    {
+      icon: <Mail size={28} strokeWidth={1.5} />,
+      label: "Email",
+      value: "narikaleli1@gmail.com",
+      href: "mailto:narikaleli1@gmail.com",
+      delay: 0.1,
+    },
+    {
+      icon: <Phone size={28} strokeWidth={1.5} />,
+      label: "Phone",
+      value: "+30 697 542 1099",
+      href: "tel:+306975421099",
+      delay: 0.2,
+    },
+    {
+      icon: <Instagram size={28} strokeWidth={1.5} />,
+      label: "Instagram",
+      value: "@athoneli.iraklis.art",
+      href: "https://www.instagram.com/athoneli.iraklis.art/",
+      external: true,
+      delay: 0.3,
+    },
+    {
+      icon: <MapPin size={28} strokeWidth={1.5} />,
+      label: "Location",
+      value: "Athos, Greece",
+      href: null,
+      delay: 0.4,
+    },
+  ];
+
   return (
-    <div className='container mx-auto px-4 py-8 pt-24'>
-      <h1 className='text-4xl font-bold text-gray-800 text-center mb-6'>
-        Contact Iraklis
-      </h1>
-      <p className='text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto'>
-        For any questions, collaborations or requests, please contact us
-        directly. We are here to provide you with the best artistic solutions.
-      </p>
+    <div className="container mx-auto px-4 py-16 pt-32 min-h-screen">
+      {/* Header Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <h1 className="text-4xl md:text-5xl font-serif text-primary mb-6">
+          Get in Touch
+        </h1>
+        <div className="h-px w-24 bg-accent mx-auto mb-8" />
+        <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+          For collaborations or to learn more about my work,
+          please feel free to reach out.
+        </p>
+      </motion.div>
 
-      <div className='grid md:grid-cols-2 gap-12 items-start bg-white p-8 rounded-lg shadow-xl'>
-        {/* Contact Information Column */}
-        <div className='space-y-8 text-center md:text-left'>
-          <div className='flex items-center justify-center md:justify-start space-x-4'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-8 w-8 text-gray-600'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-              />
-            </svg>
-            <p className='text-xl text-gray-800 font-semibold'>
-              Email:{" "}
+      {/* Contact Cards Grid */}
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {contactInfo.map((item, index) => (
+          <motion.div
+            key={item.label}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: item.delay }}
+            className="group"
+          >
+            {item.href ? (
               <a
-                href='mailto:narikaleli1@gmail.com '
-                className='text-gray-600 hover:text-gray-900'
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="block bg-white p-8 rounded-sm shadow-md hover:shadow-xl transition-all duration-500 border border-secondary hover:border-accent h-full"
               >
-                narikaleli1@gmail.com
+                <div className="flex items-start space-x-6">
+                  <div className="p-4 bg-secondary rounded-full text-primary group-hover:bg-accent group-hover:text-white transition-all duration-500 flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm uppercase tracking-widest text-muted mb-2 font-medium">
+                      {item.label}
+                    </h3>
+                    <p className="text-lg font-serif text-primary group-hover:text-accent transition-colors duration-300 break-words">
+                      {item.value}
+                    </p>
+                  </div>
+                </div>
               </a>
-            </p>
-          </div>
-
-          <div className='flex items-center justify-center md:justify-start space-x-4'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-8 w-8 text-gray-600'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
-              />
-            </svg>
-            <p className='text-xl text-gray-800 font-semibold'>
-              Phone:{" "}
-              <a
-                href='tel:+40722123456'
-                className='text-gray-600 hover:text-gray-900'
-              >
-                +30 697 542 1099
-              </a>
-            </p>
-          </div>
-
-          <div className='flex items-center justify-center md:justify-start space-x-4'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-8 w-8 text-gray-600'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-            >
-              <rect x='2' y='2' width='20' height='20' rx='5' ry='5'></rect>
-              <path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'></path>
-              <line x1='17.5' y1='6.5' x2='17.51' y2='6.5'></line>
-            </svg>
-            <p className='text-xl text-gray-800 font-semibold'>
-              <a
-                href='https://www.instagram.com/athoneli.iraklis.art/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-gray-600 hover:text-gray-900'
-              >
-                Instagram
-              </a>
-            </p>
-          </div>
-        </div>
+            ) : (
+              <div className="bg-white p-8 rounded-sm shadow-md border border-secondary h-full">
+                <div className="flex items-start space-x-6">
+                  <div className="p-4 bg-secondary rounded-full text-primary flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm uppercase tracking-widest text-muted mb-2 font-medium">
+                      {item.label}
+                    </h3>
+                    <p className="text-lg font-serif text-primary break-words">
+                      {item.value}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        ))}
       </div>
+
+      {/* Bottom Decorative Quote */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="mt-24 text-center"
+      >
+        <p className="text-2xl md:text-3xl font-serif text-primary/60 italic max-w-3xl mx-auto leading-relaxed">
+          "Every block of stone has a statue inside it and it is the task of the sculptor to discover it."
+        </p>
+        <p className="mt-4 text-muted tracking-wider">— Michelangelo</p>
+      </motion.div>
     </div>
   );
 };
