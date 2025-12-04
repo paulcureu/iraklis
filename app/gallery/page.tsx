@@ -1,192 +1,34 @@
-import SculptureSlider from "../components/SculptureSlider";
-import { Playfair_Display } from "next/font/google";
+"use client";
 
-const bokorFont = Playfair_Display({
-  subsets: ["latin"],
-  weight: "600",
-});
+import { useState, useMemo } from "react";
+import { galleryItems, GalleryCategory } from "../data/galleryData";
+import GalleryTabs from "../components/GalleryTabs";
+import GalleryGrid from "../components/GalleryGrid";
 
-const GalleryPage = () => {
-  // Data updated with the correct paths to your images
-  const sculptures = [
-    {
-      id: 1,
-      title: "Basreliefs",
-      images: [
-        "/art/Basreliefs/1.jpg",
-        "/art/Basreliefs/2.jpg",
-        "/art/Basreliefs/3.jpg",
-        "/art/Basreliefs/4.jpg",
-        "/art/Basreliefs/5.jpg",
-        "/art/Basreliefs/6.jpg",
-      ],
-    },
-    {
-      id: 2,
-      title: "Church Georgia ~ 2008-2012",
-      images: [
-        "/art/ChurchGeorgia/1.jpg",
-        "/art/ChurchGeorgia/2.jpg",
-        "/art/ChurchGeorgia/3.jpg",
-      ],
-    },
-    {
-      id: 3,
-      title: "Church Georgia ~ 2013",
-      images: [
-        "/art/ChurchGeorgia1/3.jpg",
-        "/art/ChurchGeorgia1/2.jpg",
-        "/art/ChurchGeorgia1/4.jpg",
-        "/art/ChurchGeorgia1/1.jpg",
-      ],
-    },
-    {
-      id: 4,
-      title: "Church Georgia ~ 2019",
-      images: [
-        "/art/ChurchGeorgia2/1.jpg",
-        "/art/ChurchGeorgia2/2.jpg",
-        "/art/ChurchGeorgia2/3.jpg",
-        "/art/ChurchGeorgia2/4.jpg",
-        "/art/ChurchGeorgia2/5.jpg",
-        "/art/ChurchGeorgia2/6.jpg",
-        "/art/ChurchGeorgia2/7.jpg",
-        "/art/ChurchGeorgia2/8.jpg",
-      ],
-    },
-    {
-      id: 5,
-      title: "Holly Table ~ Rusia",
-      images: ["/art/HollyTable/2.jpg", "/art/HollyTable/1.jpg"],
-    },
-    {
-      id: 6,
-      title: "Iconostas Moscow",
-      images: [
-        "/art/IconostasMoscow/1.jpg",
-        "/art/IconostasMoscow/2.jpg",
-        "/art/IconostasMoscow/3.jpg",
-        "/art/IconostasMoscow/4.jpg",
-        "/art/IconostasMoscow/5.jpg",
-        "/art/IconostasMoscow/6.jpg",
-        "/art/IconostasMoscow/7.jpg",
-        "/art/IconostasMoscow/8.jpg",
-        "/art/IconostasMoscow/9.jpg",
-        "/art/IconostasMoscow/10.jpg",
-        "/art/IconostasMoscow/11.jpg",
-        "/art/IconostasMoscow/12.jpg",
-      ],
-    },
-    {
-      id: 7,
-      title: "Icons",
-      images: [
-        "/art/IconsArt/1.jpg",
-        "/art/IconsArt/2.jpg",
-        "/art/IconsArt/3.jpg",
-        "/art/IconsArt/4.jpg",
-        "/art/IconsArt/5.jpg",
-        "/art/IconsArt/6.jpg",
-        "/art/IconsArt/7.jpg",
-        "/art/IconsArt/8.jpg",
-        "/art/IconsArt/9.jpg",
-        "/art/IconsArt/10.jpg",
-        "/art/IconsArt/11.jpg",
-        "/art/IconsArt/12.jpg",
-      ],
-    },
-    {
-      id: 8,
-      title: "New York ~ exterior stone design ~ 2008-2009",
-      images: [
-        "/art/NewYork/1.jpg",
-        "/art/NewYork/2.jpg",
-        "/art/NewYork/3.jpg",
-        "/art/NewYork/4.jpg",
-        "/art/NewYork/5.jpg",
-        "/art/NewYork/6.jpg",
-        "/art/NewYork/7.jpg",
-        "/art/NewYork/8.jpg",
-      ],
-    },
-    {
-      id: 9,
-      title: "Georgia ~ exterior stone design ~ 2012-2013",
-      images: ["/art/Georgia/1.jpg", "/art/Georgia/2.jpg"],
-    },
-    {
-      id: 10,
-      title: "Marble Kapitels of St.Evangelists ~ Mount Athos ",
-      images: [
-        "/art/StEvangelists/1.jpg",
-        "/art/StEvangelists/2.jpg",
-        "/art/StEvangelists/3.jpg",
-        "/art/StEvangelists/4.jpg",
-      ],
-    },
-    {
-      id: 11,
-      title: "Greece ~ Mount Athos ~ 2023-2025",
-      images: [
-        "/art/GreecAthos2023/1.jpg",
-        "/art/GreecAthos2023/2.jpg",
-        "/art/GreecAthos2023/3.jpg",
-        "/art/GreecAthos2023/4.jpg",
-        "/art/GreecAthos2023/5.jpg",
-        "/art/GreecAthos2023/6.jpg",
-      ],
-    },
-    {
-      id: 12,
-      title: "Greece ~ Mount Athos ~ Archangels",
-      images: ["/art/ArchangelsAthos/1.jpg"],
-    },
-    {
-      id: 13,
-      title: "Greece ~ Mount Athos",
-      images: ["/art/ArchangelsAthos/5.jpg"],
-    },
-    {
-      id: 14,
-      title: "Greece ~ Mount Athos ~ St.George",
-      images: [
-        "/art/ArchangelsAthos/6.jpg",
-        "/art/ArchangelsAthos/3.jpg",
-        "/art/ArchangelsAthos/4.jpg",
-      ],
-    },
-    {
-      id: 15,
-      title: "Greece ~ Mount Athos ~ Monastery",
-      images: [
-        "/art/AthosMonastery/1.jpg",
-        "/art/AthosMonastery/2.jpg",
-        "/art/AthosMonastery/3.jpg",
-        "/art/AthosMonastery/4.jpg",
-        "/art/AthosMonastery/5.jpg",
-      ],
-    },
-  ];
+export default function GalleryPage() {
+  const [activeCategory, setActiveCategory] = useState<GalleryCategory>("Byzantine");
+
+  const filteredItems = useMemo(() => {
+    return galleryItems.filter((item) => item.category === activeCategory);
+  }, [activeCategory]);
 
   return (
-    <div className='container mx-auto px-4 py-8 pt-16'>
-      <h1 className='text-3xl font-bold text-center text-gray-800 mb-12 mt-6'>
-        Gallery
-      </h1>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12'>
-        {sculptures.map((sculpture) => (
-          <div key={sculpture.id}>
-            <SculptureSlider images={sculpture.images} />
-            <h3
-              className={`text-lg text-gray-800 mt-4 text-center ${bokorFont.className}`}
-            >
-              {sculpture.title}
-            </h3>
-          </div>
-        ))}
+    <div className='container mx-auto px-4 py-8 pt-24 min-h-screen'>
+      <div className="text-center mb-12">
+        <h1 className='text-4xl md:text-5xl font-serif text-primary mb-4'>
+          Gallery
+        </h1>
+        <p className="text-muted max-w-md mx-auto">
+          Explore the collection of works, ranging from traditional Byzantine art to modern sculptural forms.
+        </p>
       </div>
+
+      <GalleryTabs
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+      />
+
+      <GalleryGrid items={filteredItems} />
     </div>
   );
-};
-
-export default GalleryPage;
+}
